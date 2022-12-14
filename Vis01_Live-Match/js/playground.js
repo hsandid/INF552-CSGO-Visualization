@@ -77,7 +77,10 @@ function createViz(){
 
 var startStop = function(){
 
-  ctx.timer.stop(); 
+  if(ctx.timer!=null)
+  {
+    ctx.timer.stop();
+  }
   ctx.timer = null;
 
   ctx.playerCoordinatesTeam1Alive = [];
@@ -167,6 +170,8 @@ function updateData()
       if(ctx.timeIndex*5>=round1InfoTeam1.length)
       {
         ctx.timer.stop();
+        // Timer show end
+        d3.select("#info").text("Round End!");
       }
       else
       {
