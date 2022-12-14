@@ -1,0 +1,26 @@
+,roundNum,matchID,mapName,startTick,freezeTimeEndTick,endTick,endOfficialTick,tScore,ctScore,endTScore,endCTScore,tTeam,ctTeam,winningSide,winningTeam,losingTeam,roundEndReason,ctFreezeTimeEndEqVal,ctRoundStartEqVal,ctRoundSpendMoney,ctBuyType,tFreezeTimeEndEqVal,tRoundStartEqVal,tRoundSpendMoney,tBuyType
+0,1,OG-NaVi-BLAST2020,de_dust2,9308,37043,43177,43817,0,0,0,1,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,CTWin,4400,1000,3400,Full Eco,4250,1000,3450,Full Eco
+1,2,OG-NaVi-BLAST2020,de_dust2,43817,46377,59968,60608,0,1,1,1,Natus Vincere,OGEsports,T,Natus Vincere,OGEsports,TerroristsWin,21200,3250,17950,Full Buy,10200,1000,10400,Semi Buy
+2,3,OG-NaVi-BLAST2020,de_dust2,60608,63168,72871,73511,1,1,2,1,Natus Vincere,OGEsports,T,Natus Vincere,OGEsports,TerroristsWin,8050,1000,8050,Semi Eco,23600,12600,11000,Full Buy
+3,4,OG-NaVi-BLAST2020,de_dust2,73511,76071,84022,84662,2,1,3,1,Natus Vincere,OGEsports,T,Natus Vincere,OGEsports,TerroristsWin,1000,1000,300,Full Eco,22450,16600,5850,Full Buy
+4,5,OG-NaVi-BLAST2020,de_dust2,84662,87222,99780,100420,3,1,3,2,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,CTWin,22600,1000,21600,Full Buy,26850,17600,9250,Full Buy
+5,6,OG-NaVi-BLAST2020,de_dust2,100420,102980,117700,118340,3,2,3,3,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,TargetSaved,21950,5600,16550,Full Buy,25650,1000,25750,Full Buy
+6,7,OG-NaVi-BLAST2020,de_dust2,118340,120900,134791,135431,3,3,4,3,Natus Vincere,OGEsports,T,Natus Vincere,OGEsports,TargetBombed,29050,18450,10800,Full Buy,23750,6750,18100,Full Buy
+7,8,OG-NaVi-BLAST2020,de_dust2,135431,137991,152711,153351,4,3,4,4,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,TargetSaved,21750,6000,15950,Full Buy,23300,10750,15000,Full Buy
+8,9,OG-NaVi-BLAST2020,de_dust2,153351,155911,168760,169400,4,4,4,5,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,CTWin,27450,19250,8800,Full Buy,22250,14950,5200,Full Buy
+9,10,OG-NaVi-BLAST2020,de_dust2,169400,171960,181221,181861,4,5,4,6,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,CTWin,29100,6000,23100,Full Buy,1500,1000,700,Full Eco
+10,11,OG-NaVi-BLAST2020,de_dust2,181861,184421,191658,192298,4,6,4,7,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,CTWin,31900,27000,5100,Full Buy,17650,1000,23000,Semi Buy
+11,12,OG-NaVi-BLAST2020,de_dust2,192298,194858,209034,209674,4,7,4,8,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,CTWin,32450,22050,10200,Full Buy,2300,1000,4400,Full Eco
+12,13,OG-NaVi-BLAST2020,de_dust2,209674,212234,226954,227594,4,8,4,9,Natus Vincere,OGEsports,CT,OGEsports,Natus Vincere,TargetSaved,23550,16750,17150,Full Buy,26450,1000,25450,Full Buy
+13,14,OG-NaVi-BLAST2020,de_dust2,227594,230154,239259,239899,4,9,5,9,Natus Vincere,OGEsports,T,Natus Vincere,OGEsports,TargetBombed,33700,14100,23300,Full Buy,22150,6750,16000,Full Buy
+14,15,OG-NaVi-BLAST2020,de_dust2,239899,242459,258546,259186,5,9,6,9,Natus Vincere,OGEsports,T,Natus Vincere,OGEsports,TerroristsWin,32950,13250,20300,Full Buy,19800,14350,13950,Semi Buy
+15,16,OG-NaVi-BLAST2020,de_dust2,259186,284731,294222,294862,9,6,9,7,OGEsports,Natus Vincere,CT,Natus Vincere,OGEsports,BombDefused,4400,1000,3400,Full Eco,4400,1000,3400,Full Eco
+16,17,OG-NaVi-BLAST2020,de_dust2,294862,302843,318046,318686,9,7,10,7,OGEsports,Natus Vincere,T,OGEsports,Natus Vincere,TerroristsWin,19350,2050,19050,Semi Buy,16200,1000,15200,Semi Buy
+17,18,OG-NaVi-BLAST2020,de_dust2,318686,321246,338575,339215,10,7,11,7,OGEsports,Natus Vincere,T,OGEsports,Natus Vincere,TerroristsWin,6400,1000,8950,Semi Eco,25550,9550,16600,Full Buy
+18,19,OG-NaVi-BLAST2020,de_dust2,339215,341775,345980,346620,11,7,12,7,OGEsports,Natus Vincere,T,OGEsports,Natus Vincere,TerroristsWin,1100,1000,1000,Full Eco,23800,7550,16250,Full Buy
+19,20,OG-NaVi-BLAST2020,de_dust2,346620,349180,363326,363966,12,7,13,7,OGEsports,Natus Vincere,T,OGEsports,Natus Vincere,TargetBombed,21200,1000,21200,Full Buy,26650,20050,6600,Full Buy
+20,21,OG-NaVi-BLAST2020,de_dust2,363966,371281,389308,389948,13,7,14,7,OGEsports,Natus Vincere,T,OGEsports,Natus Vincere,TargetBombed,10600,8150,3850,Semi Buy,27150,18550,8950,Full Buy
+21,22,OG-NaVi-BLAST2020,de_dust2,389948,392508,409961,410601,14,7,14,8,OGEsports,Natus Vincere,CT,Natus Vincere,OGEsports,BombDefused,29250,6050,25450,Full Buy,27050,14150,12900,Full Buy
+22,23,OG-NaVi-BLAST2020,de_dust2,410601,418300,428660,429300,14,8,14,9,OGEsports,Natus Vincere,CT,Natus Vincere,OGEsports,CTWin,30900,16100,14800,Full Buy,27150,6750,20600,Full Buy
+23,24,OG-NaVi-BLAST2020,de_dust2,429300,431860,440847,441487,14,9,15,9,OGEsports,Natus Vincere,T,OGEsports,Natus Vincere,TargetBombed,27650,5900,22850,Full Buy,24300,1000,23300,Full Buy
+24,25,OG-NaVi-BLAST2020,de_dust2,441487,448917,458546,459186,15,9,16,9,OGEsports,Natus Vincere,T,OGEsports,Natus Vincere,TerroristsWin,27550,15850,11700,Full Buy,27050,18350,8700,Full Buy

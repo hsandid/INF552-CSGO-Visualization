@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CS:GO - Kills Heatmap</title>
+        <!-- https://d3js.org/ -->
+        <script type="text/javascript" src="js/d3.v7.min.js"></script>
+        <script type="text/javascript" src="js/heatmap_deaths.js"></script>
+        <style>
+svg {
+    display: block;
+    border: 1px solid #444;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.axisLb {
+    text-anchor:middle;
+    font-family:sans-serif;
+    font-size:8pt;
+}
+        </style>
+    </head>
+
+    <body onload="createViz()">
+        <div id="main">
+            <div id="header">
+                <form>
+                    <select id="weaponType" name="searchFor">
+                      <option value="All">All Weapons</option>
+                      <option value="Pistols">Pistols</option>
+                      <option value="Rifle">Rifle</option>
+                      <option value="SMG">SMG</option>
+                      <option value="Grenade">Grenade</option>
+                      <option value="Equipment">Equipment</option>
+                    </select>
+                    <select id="eventType" name="searchFor2">
+                        <option value="Kills">Kills</option>
+                        <option value="First Kills">First Kills</option>
+                        <option value="Trade Kills">Trade Kills</option>
+                        <option value="Damages">Damages</option>
+                      </select>
+                    <input type="button" value="Set" onclick="set();" id="setBt"/>
+                    <input type="button" value="Start/Stop" onclick="startStop();" id="setBt"/>
+                  </form>
+            </div>
+        </div>
+    </body>
+
+</html>
