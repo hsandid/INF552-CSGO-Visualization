@@ -62,8 +62,14 @@ function createViz(){
   // Group for team 1 positions
   svg.append("g").attr("id", "team1alive");
 
+  // Group for team 1 text
+  svg.append("g").attr("id", "team1text");
+
   // Group for team 2 positions
   svg.append("g").attr("id", "team2alive");
+
+   // Group for team 1 text
+   svg.append("g").attr("id", "team2text");
 
   // Group for team 1 positions
   svg.append("g").attr("id", "team1dead");
@@ -107,6 +113,18 @@ var startStop = function(){
    
     playerPosDataTeam2Dead.exit().remove();
 
+
+    // Text 
+    let playerPosTextTeam1 = d3.select("#team1text").selectAll("text").data(ctx.playerCoordinatesTeam1Alive, (d) => (d.name));
+  
+    playerPosTextTeam1.exit().remove();
+
+    let playerPosTextTeam2 = d3.select("#team2text").selectAll("text").data(ctx.playerCoordinatesTeam2Alive, (d) => (d.name));
+  
+    playerPosTextTeam2.exit().remove();
+  
+  
+
     // Reset Timer
     d3.select("#info").text("Round Time (seconds): 0");
 
@@ -148,6 +166,16 @@ var set = function(){
     let playerPosDataTeam2Dead = d3.select("#team2dead").selectAll("image").data(ctx.playerCoordinatesTeam2Dead, (d) => (d.name));
    
     playerPosDataTeam2Dead.exit().remove();
+
+
+    // Text of players
+    let playerPosTextTeam1 = d3.select("#team1text").selectAll("text").data(ctx.playerCoordinatesTeam1Alive, (d) => (d.name));
+  
+    playerPosTextTeam1.exit().remove();
+
+    let playerPosTextTeam2 = d3.select("#team2text").selectAll("text").data(ctx.playerCoordinatesTeam2Alive, (d) => (d.name));
+  
+    playerPosTextTeam2.exit().remove();
 
   updateData();
 };
@@ -236,6 +264,7 @@ function representPlayers(playerCoordinatesTeam1Alive, playerCoordinatesTeam2Ali
   let playerPosDataTeam1 = d3.select("#team1alive").selectAll("image").data(playerCoordinatesTeam1Alive, (d) => (d.name));
 
   playerPosDataTeam1.transition()
+  .ease(d3.easeSin)
   .duration(1000)
   .attr("transform",  function(d){
     return playerPositionTranslator(d.x, d.y, d.viewX);});
@@ -252,9 +281,31 @@ function representPlayers(playerCoordinatesTeam1Alive, playerCoordinatesTeam2Ali
 
   playerPosDataTeam1.exit().remove();
 
+
+  let playerPosTextTeam1 = d3.select("#team1text").selectAll("text").data(playerCoordinatesTeam1Alive, (d) => (d.name));
+
+  playerPosTextTeam1.transition()
+  .ease(d3.easeSin)
+  .duration(1000)
+  .attr("transform", function(d){
+    return playerPositionTranslatorText(d.x, d.y, 0);
+});
+
+    playerPosTextTeam1.enter()
+    .append("text")
+    .attr("transform", function(d){
+      return playerPositionTranslatorText(d.x, d.y, 0);
+  })
+  .attr("font-size", 20)
+    .attr("fill","#048f27")
+    .text(function(d){return d.name});
+
+  playerPosTextTeam1.exit().remove();
+
   let playerPosDataTeam2 = d3.select("#team2alive").selectAll("image").data(playerCoordinatesTeam2Alive, (d) => (d.name));
 
   playerPosDataTeam2.transition()
+  .ease(d3.easeSin)
   .duration(1000)
   .attr("transform",  function(d){
     return playerPositionTranslator(d.x, d.y, d.viewX);});
@@ -270,6 +321,26 @@ function representPlayers(playerCoordinatesTeam1Alive, playerCoordinatesTeam2Ali
   .text((d) => (d.name));
 
   playerPosDataTeam2.exit().remove();
+
+  let playerPosTextTeam2 = d3.select("#team2text").selectAll("text").data(playerCoordinatesTeam2Alive, (d) => (d.name));
+
+  playerPosTextTeam2.transition()
+  .ease(d3.easeSin)
+  .duration(1000)
+  .attr("transform", function(d){
+    return playerPositionTranslatorText(d.x, d.y, 0);
+});
+
+    playerPosTextTeam2.enter()
+    .append("text")
+    .attr("transform", function(d){
+      return playerPositionTranslatorText(d.x, d.y, 0);
+  })
+  .attr("font-size", 20)
+    .attr("fill","#cf3934")
+    .text(function(d){return d.name});
+
+  playerPosTextTeam2.exit().remove();
 
   // Dead Players
 
@@ -300,4 +371,9 @@ function representPlayers(playerCoordinatesTeam1Alive, playerCoordinatesTeam2Ali
 function playerPositionTranslator(x,y,rotation)
 {
   return `translate(${(parseFloat(x) - (ctx.startPosX))/ctx.mapScale},${(ctx.startPosY - parseFloat(y))/ctx.mapScale }) rotate(${parseInt(rotation)} 0 0)`;
+}
+
+function playerPositionTranslatorText(x,y,rotation)
+{
+  return `translate(${((parseFloat(x) - (ctx.startPosX))/ctx.mapScale)},${((ctx.startPosY - parseFloat(y))/ctx.mapScale)-25 }) rotate(${parseInt(rotation)} 0 0)`;
 }
