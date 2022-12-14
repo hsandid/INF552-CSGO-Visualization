@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Playground</title>
+        <!-- https://d3js.org/ -->
+        <script type="text/javascript" src="js/d3.v7.min.js"></script>
+        <script type="text/javascript" src="js/playground.js"></script>
+        <style>
+svg {
+    display: block;
+    border: 1px solid #444;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.axisLb {
+    text-anchor:middle;
+    font-family:sans-serif;
+    font-size:8pt;
+}
+        </style>
+    </head>
+
+    <body onload="createViz()">
+        <div id="main">
+             <div class="header">
+                <form>
+                  <select id="searchType" name="searchFor">
+                    <option value="1">Round 1</option>
+                    <option value="2">Round 2</option>
+                    <option value="3">Round 3</option>
+                    <option value="4">Round 4</option>
+                    <option value="5">Round 5</option>
+                    <option value="6">Round 6</option>
+                    <option value="7">Round 7</option>
+                    <option value="8">Round 8</option>
+                    <option value="9">Round 9</option>
+                    <option value="10">Round 10</option>
+                    <option value="11">Round 11</option>
+                    <option value="12">Round 12</option>
+                    <option value="13">Round 13</option>
+                    <option value="14">Round 14</option>
+                    <option value="15">Round 15</option>
+                    <option value="16">Round 16</option>
+                    <option value="17">Round 17</option>
+                    <option value="18">Round 18</option>
+                    <option value="19">Round 19</option>
+                    <option value="20">Round 20</option>
+                    <option value="21">Round 21</option>
+                    <option value="22">Round 22</option>
+                    <option value="23">Round 23</option>
+                    <option value="24">Round 24</option>
+                    <option value="25">Round 25</option>
+                  </select>
+                  <input type="button" value="Set" onclick="set();" id="setBt"/>
+                  <input type="button" value="Start/Stop" onclick="startStop();" id="setBt"/>
+                </form>
+            </div>
+            <div id="info"></div>
+        </div>
+    </body>
+
+</html>
