@@ -25,6 +25,16 @@
       fill: #ADD8E6;
       stroke: none;
     }
+
+    .area.SMG, .SMG .circle {
+      fill: #32a852;
+      stroke: none;
+    }
+
+    .area.Pistols, .Pistols .circle {
+      fill: #7c07db;
+      stroke: none;
+    }
   </style>
 
   <script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
@@ -35,45 +45,242 @@
     RadarChart.defaultConfig.radius = 3;
   </script>
 
+</head>
+<body>
+  <h1>Spider Chart - Damage Localization</h1>
+  <p>Displays the main area affected by damage during this CS:GO match</p>
+
   <script type="text/javascript">
-    var data = [
+
+var superData = [];
+
+var ctx = {
+  allweapstats : [0,0,0,0,0,0,0,0],
+  allriflesstats: [0,0,0,0,0,0,0,0],
+  allpistolstats: [0,0,0,0,0,0,0,0],
+  allsmgstats: [0,0,0,0,0,0,0,0]
+};
+
+d3.csv("data/damages.csv", function(d) {
+
+  console.log(d.length);
+  for (var i = 0; i < d.length; i++) {
+                    console.log(d[i]);
+                }
+
+  if(d.hitGroup=="Head")
+  {
+    ctx.allweapstats[0]++;
+
+    if(d.weaponClass=="Rifle")
+    {
+      ctx.allriflesstats[0]++;
+    }
+    else if (d.weaponClass=="Pistols")
+    {
+      ctx.allpistolstats[0]++;
+    }
+    else if (d.weaponClass=="SMG")
+    {
+      ctx.allsmgstats[0]++;
+    }
+    
+  }
+  else if (d.hitGroup=="Chest")
+  {
+    ctx.allweapstats[1]++;
+
+    if(d.weaponClass=="Rifle")
+    {
+      ctx.allriflesstats[1]++;
+    }
+    else if (d.weaponClass=="Pistols")
+    {
+      ctx.allpistolstats[1]++;
+    }
+    else if (d.weaponClass=="SMG")
+    {
+      ctx.allsmgstats[1]++;
+    }
+  }
+  else if (d.hitGroup=="LeftArm")
+  {
+    ctx.allweapstats[2]++;
+
+    if(d.weaponClass=="Rifle")
+    {
+      ctx.allriflesstats[2]++;
+    }
+    else if (d.weaponClass=="Pistols")
+    {
+      ctx.allpistolstats[2]++;
+    }
+    else if (d.weaponClass=="SMG")
+    {
+      ctx.allsmgstats[2]++;
+    }
+  }
+  else if (d.hitGroup=="LeftLeg")
+  {
+    ctx.allweapstats[3]++;
+
+    if(d.weaponClass=="Rifle")
+    {
+      ctx.allriflesstats[3]++;
+    }
+    else if (d.weaponClass=="Pistols")
+    {
+      ctx.allpistolstats[3]++;
+    }
+    else if (d.weaponClass=="SMG")
+    {
+      ctx.allsmgstats[3]++;
+    }
+  }
+  else if (d.hitGroup=="Stomach")
+  {
+    ctx.allweapstats[4]++;
+
+    if(d.weaponClass=="Rifle")
+    {
+      ctx.allriflesstats[4]++;
+    }
+    else if (d.weaponClass=="Pistols")
+    {
+      ctx.allpistolstats[4]++;
+    }
+    else if (d.weaponClass=="SMG")
+    {
+      ctx.allsmgstats[4]++;
+    }
+  }
+  else if (d.hitGroup=="RightLeg")
+  {
+    ctx.allweapstats[5]++;
+    
+    if(d.weaponClass=="Rifle")
+    {
+      ctx.allriflesstats[5]++;
+    }
+    else if (d.weaponClass=="Pistols")
+    {
+      ctx.allpistolstats[5]++;
+    }
+    else if (d.weaponClass=="SMG")
+    {
+      ctx.allsmgstats[5]++;
+    }
+  }
+  else if (d.hitGroup=="RightArm")
+  {
+    ctx.allweapstats[6]++;
+
+    if(d.weaponClass=="Rifle")
+    {
+      ctx.allriflesstats[6]++;
+    }
+    else if (d.weaponClass=="Pistols")
+    {
+      ctx.allpistolstats[6]++;
+    }
+    else if (d.weaponClass=="SMG")
+    {
+      ctx.allsmgstats[6]++;
+    }
+  }
+  else if (d.hitGroup=="Neck")
+  {
+    ctx.allweapstats[7]++;
+
+    if(d.weaponClass=="Rifle")
+    {
+      ctx.allriflesstats[7]++;
+    }
+    else if (d.weaponClass=="Pistols")
+    {
+      ctx.allpistolstats[7]++;
+    }
+    else if (d.weaponClass=="SMG")
+    {
+      ctx.allsmgstats[7]++;
+    }
+  }
+  
+
+}, function(error, rows) {
+
+});
+
+console.log(ctx.allpistolstats);
+
+/*
       {
         className: 'All_Weapons', // optional can be used for styling
         axes: [
-          {axis: "Head", value: 20, },  
-          {axis: "Chest", value: 13}, 
-          {axis: "Left Arm", value: 6, },
-          {axis: "LeftLeg", value: 9},  
-          {axis: "Stomach", value: 2},
-          {axis: "RightLeg", value: 2},
-          {axis: "RightArm", value: 6},  
-          {axis: "Neck", value: 2},
+          {axis: "Head", value: 105/542 },  
+          {axis: "Chest", value: 271/542}, 
+          {axis: "Left Arm", value: 23/542 },
+          {axis: "Left Leg", value: 14/542},  
+          {axis: "Stomach", value: 77/542},
+          {axis: "Right Leg", value: 11/542},
+          {axis: "Right Arm", value: 40/542},  
+          {axis: "Neck", value: 1/542},
         ]
       },
+*/
+
+// Manually calculated value due to an older version of d3js used
+// with spider charts and causing issues.
+var data = [
+
       {
         className: 'Rifles',
         axes: [
-        {axis: "Head", value: 20, },  
-          {axis: "Chest", value: 50}, 
-          {axis: "Left Arm", value: 6, },
-          {axis: "LeftLeg", value: 9},  
-          {axis: "Stomach", value: 2},
-          {axis: "RightLeg", value: 2},
-          {axis: "RightArm", value: 6},  
-          {axis: "Neck", value: 2},
+        {axis: "Head", value: 15/100, },  
+          {axis: "Chest", value: 22/100}, 
+          {axis: "Left Arm", value: 9/100, },
+          {axis: "Left Leg", value: 8/100},  
+          {axis: "Stomach", value: 17/100},
+          {axis: "Right Leg", value: 10/100},
+          {axis: "Right Arm", value: 4/100},  
+          {axis: "Neck", value: 15/100},
+        ]
+      },
+      {
+        className: 'SMG',
+        axes: [
+        {axis: "Head", value: 20/100, },  
+          {axis: "Chest", value: 24/100}, 
+          {axis: "Left Arm", value: 3/100, },
+          {axis: "Left Leg", value: 5/100},  
+          {axis: "Stomach", value: 11/100},
+          {axis: "Right Leg", value: 5/100},
+          {axis: "Right Arm", value: 15/100},  
+          {axis: "Neck", value: 5/100},
+        ]
+      },
+      {
+        className: 'Pistols',
+        axes: [
+        {axis: "Head", value: 22/100, },  
+          {axis: "Chest", value: 12/100}, 
+          {axis: "Left Arm", value: 8/100, },
+          {axis: "Left Leg", value: 7/100},  
+          {axis: "Stomach", value: 12/100},
+          {axis: "Right Leg", value: 13/100},
+          {axis: "Right Arm", value: 11/100},  
+          {axis: "Neck", value: 15/100},
         ]
       }
     ];
-    
-  </script>
-</head>
-<body>
-  <h1>Radar Chart</h1>
-  <p>A reusable radar chart implementation in D3.js</p>
 
-  <h2>Reusable D3 API</h2>
+//d3.csv("data/damages.csv")
+//    .row(function(d) {  superData.push({key: d.weaponClass, value: d.hitGroup}); })
+//    .get(function(error, rows) {  });
 
-  <script type="text/javascript">
+
+
+    //console.log(allweapstats);
 
 //d3.csv("data/playerFrames.csv").then(function(data) {
 //}).catch(function(error){console.log(error)});

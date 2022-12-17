@@ -114,7 +114,12 @@ function displayHeatmap(data)
        .data(densityDataDef)
        //.exit().remove()
        .enter().append("path")
+       .transition()
+    .delay(100)
+    .duration(2000)
         .attr("d", d3.geoPath())
          .attr("fill", function(d) { return color(d.value); })
        .attr("opacity", 0.3)
+       .attr("stroke", "red")
+      .attr("stroke-linejoin", "round");
 }
